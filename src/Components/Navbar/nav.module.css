@@ -140,5 +140,5 @@ nav .bigMenu .closeIcon {
   z-index: 11;
   transition: 0.5s;
   background-color: #fff;
-  padding: 0 !important;
+  padding:40px 0 !important;
 }
