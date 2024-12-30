@@ -1,0 +1,93 @@
+.sliderContainer {
+  /* max-width: 1200px; */
+  width: calc(100% - 100px);
+  margin: 20px auto;
+  padding: 20px;
+}
+.heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+.slide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.image {
+  display: block;
+  margin: 10px auto;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 2px solid #ddd;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+}
+.name {
+  margin-top: 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+}
+.message {
+  font-style: italic;
+  margin: 10px 0;
+  color: gray;
+  font-size: 20px;
+}
+.position {
+  font-weight: bold;
+  color: #777;
+  font-size: 18px;
+}
+.slick-prev,
+.slick-next {
+  font-size: 24px;
+  color: #333;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+.slick-prev {
+  left: -50px;
+}
+
+.slick-next {
+  right: -50px;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #007bff;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  content: "";
+}
+.customArrow {
+  font-size: 30px;
+  color: #007bff;
+  z-index: 10;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slick-prev.customArrow {
+  left: -50px;
+}
+
+.slick-next.customArrow {
+  right: -50px;
+}
+
+.customArrow:hover {
+  color: #0056b3;
+}

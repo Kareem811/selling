@@ -1,0 +1,116 @@
+.container {
+  width: calc(100% - 200px);
+  min-height: 50vh;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+}
+.container .titles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container .titles h2 {
+  font-size: 40px;
+  position: relative;
+  top: 10px;
+}
+
+.container .titles span {
+  color: lightgray;
+  text-align: center;
+  font-size: 25px;
+}
+.container .team {
+  width: 77%;
+  min-height: 30vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.container .team .card {
+  width: 100%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.container .team .card img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.container .team .card h3 {
+  font-weight: 100;
+}
+.container .team .card span {
+  color: rgba(128, 128, 128, 0.811);
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.container .team .card p {
+  font-size: 15px;
+  color: gray;
+  line-height: 32px;
+  text-align: center;
+}
+
+.container .team .card .links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .team .card .links a {
+  background-color: #7b7b7b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 7px;
+  transition: 0.5s;
+}
+
+.container .team .card .links a:hover {
+  background-color: #3b3b3b;
+}
+
+@media screen and (max-width : 1415px) {
+  .container .team 
+  {
+    width: 95%;
+  }
+}
+@media screen and (max-width : 1050px) {
+  .container 
+  {
+    width: 100%;
+  }
+  .container .team 
+  {
+    width: 100%;
+    padding: 20px;
+  }
+}
+@media screen and (max-width : 850px) {
+  .container .team 
+  {
+    grid-template-columns: repeat(1 , 1fr);
+  }
+  .container .team .card
+  {
+    gap: 10px;
+  }
+  .container .team .card img 
+  {
+    object-fit: cover;
+    width: 100%;
+  }
+}

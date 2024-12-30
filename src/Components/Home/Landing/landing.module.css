@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+.container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.container .landingLayer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container .landingLayer .landingData {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  margin-left: 50px;
+  padding: 20px;
+  width: 700px;
+}
+.container .landingLayer .landingData h1 {
+  font-size: 5rem;
+  font-weight: 400;
+  color: #fff;
+  font-weight: 900;
+}
+@media screen and (max-width: 650px) {
+  .container .landingLayer .landingData {
+    width: 100%;
+    margin: 0;
+  }
+  .container .landingLayer .landingData h1 {
+    font-size: 3.5rem;
+  }
+}
+.container .landingLayer .landingData .buttons {
+  display: flex;
+  gap: 5px;
+}
+.container .landingLayer .landingData .buttons a {
+  padding: 15px 50px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  transition: 0.5s;
+  color: #fff;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.container .landingLayer .landingData .buttons a:nth-child(2) {
+  background-color: #fff;
+  color: #000;
+}
+
+.container .landingLayer .landingData .buttons a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.container .landingLayer .landingData .buttons a:nth-child(2):hover {
+  background-color: transparent;
+  color: #fff;
+}
