@@ -73,4 +73,8 @@
   .container .aboutData p {
     max-width: 100%;
   }
+  .container a {
+    padding: 5px 30px;
+    font-size: 14px;
+  }
 }

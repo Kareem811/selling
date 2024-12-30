@@ -40,15 +40,6 @@
   color: #fff;
   font-weight: 900;
 }
-@media screen and (max-width: 650px) {
-  .container .landingLayer .landingData {
-    width: 100%;
-    margin: 0;
-  }
-  .container .landingLayer .landingData h1 {
-    font-size: 3.5rem;
-  }
-}
 .container .landingLayer .landingData .buttons {
   display: flex;
   gap: 5px;
@@ -77,4 +68,20 @@
 .container .landingLayer .landingData .buttons a:nth-child(2):hover {
   background-color: transparent;
   color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+  .container .landingLayer .landingData {
+    width: 100%;
+    margin: 0;
+  }
+  .container .landingLayer .landingData h1 {
+    font-size: 3.5rem;
+  }
+  .container .landingLayer .landingData .buttons  {
+    margin-top: 20px;
+  }
+  .container .landingLayer .landingData .buttons a {
+    padding: 10px 35px;
+  }
 }
