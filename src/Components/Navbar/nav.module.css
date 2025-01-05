@@ -44,43 +44,6 @@ header .headerContent .headerInfo .dataInfo {
   align-items: center;
   gap: 5px;
 }
-@media screen and (max-width: 930px) {
-  header .headerContent .headerInfo .dataInfo {
-    font-size: 12px;
-  }
-}
-@media screen and (max-width: 860px) {
-  header {
-    height: auto;
-    padding: 0;
-  }
-  header .headerContent {
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    width: 90%;
-  }
-  header .headerContent .headerIcons {
-    width: 100%;
-  }
-  header .headerContent .headerInfo .dataInfo {
-    gap: 10px;
-    width: auto;
-  }
-  nav {
-    padding: 0 !important;
-    height: auto;
-  }
-  nav .navContent {
-    width: calc(100% - 200px);
-  }
-}
-@media screen and (max-width: 450px) {
-  nav .navContent {
-    width: 90%;
-  }
-}
 
 nav {
   padding: 40px 0;
@@ -101,7 +64,7 @@ nav .navContent ul {
   gap: 5px;
 }
 nav .navContent ul li a {
-  padding: 7px 18px;
+  padding: 7px 15px;
   color: #000;
   transition: 0.5s;
 }
@@ -140,5 +103,78 @@ nav .bigMenu .closeIcon {
   z-index: 11;
   transition: 0.5s;
   background-color: #fff;
-  padding: 0 !important;
+  padding: 40px 0 !important;
+}
+
+@media screen and (max-width: 930px) {
+  header .headerContent .headerInfo .dataInfo {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 860px) {
+  header {
+    height: auto;
+    padding: 0;
+  }
+  header .headerContent {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+  }
+  header .headerContent .headerIcons {
+    width: 100%;
+  }
+  header .headerContent .headerInfo .dataInfo {
+    gap: 10px;
+    width: auto;
+  }
+  nav {
+    padding: 0 !important;
+    height: auto;
+  }
+  .navScroll {
+    padding: 0 !important;
+  }
+  nav .navContent {
+    width: calc(100% - 200px);
+  }
+}
+@media screen and (max-width: 1390px) {
+  header .headerContent,
+  nav .navContent {
+    width: 100%;
+    padding: 30px 70px;
+  }
+  nav .navContent ul 
+  {
+    gap: 2px;
+  }
+}
+@media screen and (max-width: 450px) {
+  nav .navContent {
+    width: 90%;
+  }
+}
+.profile {
+  background-color: orangered !important;
+  color: #fff !important;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 10px !important;
+}
+nav ul li button {
+  padding: 5px 18px;
+  border-radius: 4px;
+  border: 1px solid orangered;
+  color: orangered;
+  cursor: pointer;
+  transition: 0.25s;
+  background-color: #fff;
+}
+
+nav ul li button:hover {
+  background-color: orangered;
+  color: #fff;
 }

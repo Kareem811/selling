@@ -9,34 +9,25 @@
   gap: 40px;
 }
 .container .titles {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   flex-direction: column;
 }
-.container .titles h1 {
+.container .titles h2 {
   font-size: 40px;
   position: relative;
   top: 10px;
 }
 
-.container .titles h1::before {
-  content: "Awesome Products";
+.container .titles span {
   color: lightgray;
-  position: absolute;
   text-align: center;
-  top: -20px;
-  width: 300px;
-  left: -25px;
   font-size: 25px;
-  text-transform: uppercase;
-  z-index: -1;
 }
 .container .titles p {
   max-width: 600px;
-  line-height: 35px;
+  line-height: 33px;
   color: gray;
 }
 .container .products {
@@ -123,10 +114,13 @@
   }
   .container .products .productCard {
     width: 100%;
-    padding: 50px;
+    padding: 30px;
   }
 }
 @media screen and (max-width: 982px) {
+  .container .titles p {
+    padding: 25px;
+  }
   .container .products .productCard img {
     width: 400px;
   }
@@ -143,7 +137,7 @@
     top: -10px;
     left: calc(100% - 150px);
   }
-.container .products .productCard .actions button {
-  padding: 8px 22px;
-}
+  .container .products .productCard .actions button {
+    padding: 8px 22px;
+  }
 }

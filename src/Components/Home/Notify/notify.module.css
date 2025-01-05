@@ -59,4 +59,7 @@
   .container .notifyLayer .inputField input {
     width: calc(100% - 50px);
   }
+  .container .notifyLayer {
+    padding: 25px;
+  }
 }

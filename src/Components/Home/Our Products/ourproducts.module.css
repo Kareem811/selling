@@ -9,19 +9,22 @@
   gap: 40px;
 }
 .container .titles {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   flex-direction: column;
 }
-.container .titles h1 {
+.container .titles h2 {
   font-size: 40px;
   position: relative;
   top: 10px;
 }
 
+.container .titles span {
+  color: lightgray;
+  text-align: center;
+  font-size: 25px;
+}
 .container .titles h1::before {
   content: "Popular Products";
   color: lightgray;
@@ -140,6 +143,20 @@
   }
   .container {
     width: 100% !important;
-    padding: 20px ;
+    padding: 20px;
   }
+}
+.container a {
+  padding: 10px 50px;
+  color: #fff;
+  background-color: #000;
+  font-weight: 600;
+  transition: 0.5s;
+  border: 2px solid #000;
+}
+
+.container a:hover {
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
 }

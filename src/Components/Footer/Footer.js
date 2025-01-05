@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
       </div>
       <p className={footerStyles.copyrights}>
-        Copyright ©2025 All rights reserved | This template is made with by <Link to={""}>Kareem Ahmed</Link>
+        Copyright ©2025 All rights reserved | This template is made with by <Link to={"https://www.linkedin.com/in/kareem-el-tayeb-b4979a30a/"}>Kareem Ahmed</Link>
       </p>
     </footer>
   );

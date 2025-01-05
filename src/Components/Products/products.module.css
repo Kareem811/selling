@@ -1,0 +1,203 @@
+.container {
+  width: calc(100% - 200px);
+  min-height: 100vh;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 30px;
+}
+.container .titles {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  background-color: #f5f5f5;
+  color: #000;
+  border-radius: 10px;
+  /* box-shadow: 0 0 20px 2px rgba(0,0,0,0.1); */
+}
+.container .titles h2 {
+  font-size: 40px;
+}
+.container .titles h2 span {
+  font-weight: 900;
+  color: orangered;
+  font-size: 35px;
+}
+.container .titles .inputBox {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .titles .inputBox svg {
+  position: absolute;
+  left: 5px;
+}
+.container .titles .inputBox input {
+  padding: 7px 30px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  width: 300px;
+}
+
+.container .categories ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .categories ul li a {
+  text-transform: capitalize;
+  color: #3b3b3b;
+  padding: 10px 25px;
+  border-radius: 4px;
+  transition: 0.5s;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+.container .categories ul li a:hover,
+.container .categories ul li .active {
+  color: #fff;
+  background-color: orangered;
+}
+.container .products {
+  width: 100%;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+.container .products .product {
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  text-align: left;
+  gap: 10px;
+  flex-direction: column;
+}
+.container .products .product img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.container .products .product h3::first-letter {
+  text-transform: capitalize;
+}
+
+.container .products .product .actions {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+.container .products .product button,
+.container .productContent .productData button {
+  background-color: orangered;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: #fff;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: 0.5s;
+}
+
+.container .products .product .actions a {
+  color: orangered;
+  border: 1px solid orangered;
+  padding: 5px 10px;
+  font-size: 15px;
+  transition: 0.5s;
+}
+
+.container .products .product button:hover,
+.container .productContent .productData button:hover {
+  background-color: #fff;
+  color: orangered !important;
+  border-color: orangered;
+}
+
+.container .products .product .actions a:hover {
+  background-color: orangered;
+  color: #fff;
+}
+
+/* ------------------------- */
+.container .productContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .productContent .productImages {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.container .productContent .productImages .subImages {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.container .productContent .productImages .subImages img {
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+}
+.container .productContent .productImages .mainImage {
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.container .productContent .productImages .mainImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.container .productContent .productImages .mainImage img:hover {
+  transform: scale(1.2);
+}
+.container .productContent .productData {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 25px;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.container .productContent .productData p {
+  line-height: 32px;
+  color: gray;
+}
+.container .productContent .productData button 
+{
+  font-size: 19px;
+  padding: 10px 40px;
+}

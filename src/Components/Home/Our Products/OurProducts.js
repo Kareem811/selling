@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ourProductsStyles from "./ourproducts.module.css";
 import axios from "axios";
 import { MdOutlineFavorite } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const OurProducts = () => {
   const [products, setProducts] = useState([]);
@@ -30,6 +31,7 @@ const OurProducts = () => {
   return (
     <section className={ourProductsStyles.container}>
       <div className={ourProductsStyles.titles}>
+        <span>Popular Products</span>
         <h1>Our Products</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
       </div>
@@ -52,6 +54,7 @@ const OurProducts = () => {
           </div>
         ))}
       </div>
+      <Link to={`/products`}>Explore</Link>
     </section>
   );
 };

@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+.container {
+  /* background: linear-gradient(to right, #a1c4fd, #c2e9fb); */
+  background-image: url(../../../Images/about.webp);
+  background-size: cover;
+  transition: 0.5s;
+}
+.container .containerLayer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0 100px;
+}
+.form {
+  background: white;
+  padding: 5rem 3.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  font-family: "Montserrat", serif;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.terms input {
+  margin-right: 0.5rem;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.button,
+.doneContainer .doneContent button {
+  width: 80%;
+  padding: 0.9rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, orange, orangered);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button:hover,
+.doneContainer .doneContent button:hover {
+  background: linear-gradient(to right, orangered, orange);
+}
+
+.loginLink {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+@media screen and (max-width: 650px) {
+  .container .containerLayer {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 470px) {
+  .container {
+    background-position: center;
+  }
+  .container .containerLayer .form {
+    padding: 40px;
+  }
+}
+.inlineInputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.inlineInput {
+  flex: 1;
+  width: auto;
+}
+.error {
+  color: red;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.doneContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.doneContainer .doneContent {
+  max-width: 600px;
+  width: 900px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.3);
+  flex-direction: column;
+}

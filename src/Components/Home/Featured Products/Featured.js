@@ -31,7 +31,8 @@ const Featured = () => {
   return (
     <section className={featuredStyles.container}>
       <div className={featuredStyles.titles}>
-        <h1>Our Products</h1>
+        <span>Awesome Products</span>
+        <h2>Our Products</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae nostrum natus excepturi fuga ullam accusantium vel ut eveniet aut consequatur laboriosam ipsam.</p>
       </div>
       <div className={featuredStyles.products}>

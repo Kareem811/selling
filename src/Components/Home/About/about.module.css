@@ -69,6 +69,7 @@
   }
   .container .aboutData {
     width: 100%;
+    padding: 20px;
   }
   .container .aboutData p {
     max-width: 100%;

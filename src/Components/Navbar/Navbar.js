@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { FaFacebookF } from "react-icons/fa";
@@ -8,13 +8,15 @@ import { IoMdMail } from "react-icons/io";
 import { IoMenuOutline } from "react-icons/io5";
 import navStyles from "./nav.module.css";
 import { IoIosCloseCircle } from "react-icons/io";
+import AuthContext from "../../Utilities/Context";
 
 const Navbar = () => {
-  const [menuSize, setMenuSize] = useState(window.innerWidth <= 1120);
+  const { user, logout } = useContext(AuthContext);
+  const [menuSize, setMenuSize] = useState(window.innerWidth <= 1067);
   const [bigMenu, setBigMenu] = useState(false);
   const [navScroll, setNavScroll] = useState(window.scrollY >= 100);
   const checkMenu = (size) => {
-    setMenuSize(size <= 1120);
+    setMenuSize(size <= 1067);
   };
   const checkScroll = (scroll) => {
     setNavScroll(scroll >= 100);
@@ -79,13 +81,13 @@ const Navbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/products" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
-                Products
+              <NavLink to="/about" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
+                About Us
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
-                About Us
+              <NavLink to="/products" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
+                Products
               </NavLink>
             </li>
             <li>
@@ -98,6 +100,31 @@ const Navbar = () => {
                 Contact
               </NavLink>
             </li>
+            {!user ? (
+              <>
+                <li>
+                  <NavLink to="/login" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
+                    Login
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/register" className={({ isActive }) => (isActive ? navStyles.active : undefined)}>
+                    Register
+                  </NavLink>
+                </li>
+              </>
+            ) : (
+              <>
+                <li>
+                  <NavLink to={`/profile/${user.id}`} className={`${({ isActive }) => (isActive ? navStyles.active : undefined)} ${navStyles.profile}`}>
+                    Welcome {user.name.split(" ")[0]}
+                  </NavLink>
+                </li>
+                <li>
+                  <button onClick={() => logout()}>Logout</button>
+                </li>
+              </>
+            )}
           </ul>
           {menuSize ? <IoMenuOutline size={30} cursor={"pointer"} color="#000" onClick={() => changeMenu()} /> : undefined}
         </div>
