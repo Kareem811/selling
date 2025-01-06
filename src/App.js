@@ -25,9 +25,20 @@ function App() {
         <Route path="/products/:cat/:pid" element={<SingleProduct />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        {roles.map((el, idx) => (
+        {roles.map((el, idx) =>
+          el.children ? (
+            <Route key={idx} path={el.path} element={<ProtectedRoute role={el.role}>{el.element}</ProtectedRoute>}>
+              {el.children.map((element, index) => (
+                <Route key={index} path={element.path} element={element.element} />
+              ))}
+            </Route>
+          ) : (
+            <Route key={idx} path={el.path} element={<ProtectedRoute role={el.role}>{el.element}</ProtectedRoute>} />
+          ),
+        )}
+        {/* {roles.map((el, idx) => (
           <Route key={idx} path={el.path} element={<ProtectedRoute role={el.role}>{el.element}</ProtectedRoute>} />
-        ))}
+        ))} */}
 
         {/* <Route
           path="/user-dashboard"
