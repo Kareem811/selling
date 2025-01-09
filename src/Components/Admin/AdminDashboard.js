@@ -5,27 +5,44 @@ import AuthContext from "../../Utilities/Context";
 import axiosClient from "../../Utilities/axiosClient";
 import Loading from "../Loading/Loading";
 import { Link, Outlet } from "react-router-dom";
+
 const AdminDashboard = () => {
   const [asideTranslate, setAsideTranslate] = useState(false);
-  const [asideIcon, setAsideIcon] = useState(false);
-  const [leftValue, setLeftValue] = useState(0);
-  const [data, setData] = useState({});
+  const [asideIcon, setAsideIcon] = useState(window.innerWidth < 1230);
+  const [leftValue, setLeftValue] = useState(window.innerWidth < 1230 ? -250 : 0);
   const [loading, setLoading] = useState(true);
+
+  const handleResize = () => {
+    if (window.innerWidth < 1230) {
+      setAsideTranslate(true);
+      setAsideIcon(true);
+      setLeftValue(-250);
+    } else {
+      setAsideTranslate(false);
+      setAsideIcon(false);
+      setLeftValue(0);
+    }
+  };
+
   const changeAsideStyle = () => {
     setAsideTranslate(!asideTranslate);
     setAsideIcon(!asideIcon);
-    asideTranslate ? setLeftValue(0) : setLeftValue(-250);
+    setLeftValue(asideTranslate ? 0 : -250);
   };
+
   const { user } = useContext(AuthContext);
+
   useEffect(() => {
+    window.addEventListener("resize", handleResize);
     axiosClient
       .get(`/data`)
-      .then((res) => {
-        setData(res.data);
+      .then(() => {
         setLoading(false);
       })
       .catch((err) => console.log(err));
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
+
   return (
     <section className={dashboardStyles.dashboard}>
       <SideBar leftValue={leftValue} asideIcon={asideIcon} asideTranslate={asideTranslate} changeAsideStyle={changeAsideStyle} user={user.name} />

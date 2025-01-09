@@ -18,12 +18,12 @@ const AllProducts = () => {
     axiosClient
       .get(`/products`)
       .then((res) => {
-        const productsData = res.data;
+        const productsData = res.data.products;
         setProducts(productsData);
         extractDistinctCategories(productsData);
         setLoading(false);
       })
-      .catch((err) => setLoading(false));
+      .catch(() => setLoading(false));
   }, []);
 
   const extractDistinctCategories = (productsData) => {
@@ -34,7 +34,7 @@ const AllProducts = () => {
 
   const renderProducts = () => {
     return products
-      .filter((product) => product.title.toLowerCase().includes(search.toLowerCase()))
+      ?.filter((product) => product.title.toLowerCase().includes(search.toLowerCase()))
       .map((product, idx) => (
         <div className={productsStyles.product} key={idx}>
           <img src={product.category.image} alt={product.category.name} className={productsStyles.productImage} />

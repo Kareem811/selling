@@ -1,8 +1,53 @@
+// import AddProduct from "../Components/Admin/AddProduct";
+// import AdminDashboard from "../Components/Admin/AdminDashboard";
+// import Orders from "../Components/Admin/Orders";
+// import ProductsDashboard from "../Components/Admin/ProductsDashboard";
+// import SingleOrder from "../Components/Admin/SingleOrder";
+// import Users from "../Components/Admin/Users";
+// export const roles = [
+//   {
+//     path: "/admin-dashboard",
+//     element: <AdminDashboard />,
+//     role: "admin",
+//     children: [
+//       {
+//         path: "users",
+//         element: <Users />,
+//       },
+//       {
+//         path: "products",
+//         element: <ProductsDashboard />,
+//         // children: [
+//         //   {
+//         //     path: "/admin-dashboard/products/addproduct",
+//         //     element: <AddProduct />,
+//         //   },
+//         // ],
+//       },
+//       {
+//         path: "orders",
+//         element: <Orders />,
+//       },
+//     ],
+//   },
+//   {
+//     path: "/admin-dashboard/orders/:orderId",
+//     element: <SingleOrder />,
+//     role: "admin",
+//   },
+//   // {
+//   //   path: "/admin-dashboard/products/addproduct",
+//   //   element: <AddProduct />,
+//   //   role: "admin",
+//   // },
+// ];
+
+import AddProduct from "../Components/Admin/AddProduct";
 import AdminDashboard from "../Components/Admin/AdminDashboard";
+import Orders from "../Components/Admin/Orders";
 import ProductsDashboard from "../Components/Admin/ProductsDashboard";
-import ShowMessages from "../Components/Admin/ShowMessages";
-import UpdateProduct from "../Components/Admin/UpdateProduct";
-import Users from "../Components/Admin/Users";
+import SingleOrder from "../Components/Admin/SingleOrder";
+import Users from '../Components/Admin/Users'
 export const roles = [
   {
     path: "/admin-dashboard",
@@ -10,43 +55,28 @@ export const roles = [
     role: "admin",
     children: [
       {
-        path: "users",
+        path: "users", // Relative path: /admin-dashboard/users
         element: <Users />,
       },
       {
-        path: "products",
+        path: "products", // Relative path: /admin-dashboard/products
         element: <ProductsDashboard />,
+        children: [
+          {
+            path: "add-product", // Relative path: /admin-dashboard/products/addproduct
+            element: <AddProduct />,
+          },
+        ],
+      },
+      {
+        path: "orders", // Relative path: /admin-dashboard/orders
+        element: <Orders />,
       },
     ],
   },
-  // {
-  //   path: "admin-dashboard/products",
-  //   element: <ProductsDashboard />,
-  //   role: "admin",
-  // },
-  // {
-  //   path: "/add-product",
-  //   element: <AddProduct />,
-  //   role: "admin",
-  // },
-  // {
-  //   path: "/show-products",
-  //   element: <ShowProducts />,
-  //   role: "admin",
-  // },
-  // {
-  //   path: "admin-dashboard/products/update-product/:productid",
-  //   element: <UpdateProduct />,
-  //   role: "admin",
-  // },
-  // {
-  //   path: "admin-dashboard/users",
-  //   element: <Users />,
-  //   role: "admin",
-  // },
-  // {
-  //   path: "admin-dashboard/show-messages",
-  //   element: <ShowMessages />,
-  //   role: "admin",
-  // },
+  {
+    path: "/admin-dashboard/orders/:orderId",
+    element: <SingleOrder />,
+    role: "admin",
+  },
 ];
